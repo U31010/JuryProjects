@@ -31,7 +31,7 @@ namespace testJuryNumberProject
                 if ((valueToPrint % 1) == 0)
                     result = result.Split('.')[0];
             }
-            result.TrimEnd('0');
+            result = result.TrimEnd('0');
             return result;
         }
     }
