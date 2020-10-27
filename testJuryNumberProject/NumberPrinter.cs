@@ -21,17 +21,13 @@ namespace testJuryNumberProject
             string pattern = $"F{DisplayAfterDot}";
 
             result = valueToPrint.ToString(pattern, System.Globalization.CultureInfo.InvariantCulture);
-            if (IsDotNeed)
+            result = result.TrimEnd('0');
+            if (!IsDotNeed $$ (valueToPrint % 1) == 0)
             {
-                if ((valueToPrint % 1) == 0)
-                    result = result.Split('.')[0] + ".";
-            }
-            else
-            {
-                if ((valueToPrint % 1) == 0)
+            
                     result = result.Split('.')[0];
             }
-            result = result.TrimEnd('0');
+      
             return result;
         }
     }
